@@ -1,7 +1,6 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import path from "path"
 import { connectDB } from "./config/db.js"
 import authRoutes from "./routes/authRoutes.js"
 import leadRoutes from "./routes/leadRoutes.js"
@@ -36,8 +35,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 
 
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend/index.html'));
+app.get('/', (req, res) => {
+  res.send('Lead Management Backend is running!');
 });
 
 app.listen(PORT, () => {
