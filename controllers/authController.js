@@ -20,11 +20,11 @@ import { generateToken } from '../config/utils.js';
       return res.status(401).json({success:false,message:"Incorrect credentials"})
     }
     
-     generateToken(user.id,res)
+     const token = generateToken(user.id,res)
 
      res.status(200).json({
       success:true,
-     
+      token: token // Include token in response
      })  
   }
    catch(error){
@@ -62,9 +62,9 @@ import { generateToken } from '../config/utils.js';
   })
 
   if(newUser){
-    generateToken(newUser.id,res)
+    const token = generateToken(newUser.id,res)
      await newUser.save();
-       res.status(201).json({ success: true, message: "Registered" });
+       res.status(201).json({ success: true, message: "Registered", token: token });
   } 
   else{
      res.status(400).json({message:"Invalid user data"})
