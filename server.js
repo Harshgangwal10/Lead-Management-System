@@ -15,9 +15,17 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+  'http://localhost:3000',
+ "https://lead-management-system-frontend-a9s9vkxdc.vercel.app"
+  ],
   credentials: true
 }));
+
+app.get('/', (req, res) => {
+  res.send('Lead Management Backend is running!');
+});
+
 
 app.use(express.json());
 app.use(cookieParser());
