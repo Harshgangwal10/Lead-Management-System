@@ -17,7 +17,7 @@ connectDB();
 app.use(cors({
   origin: [
   'http://localhost:3000',
- "https://lead-management-system-frontend-a9s9vkxdc.vercel.app"
+ "https://lead-management-system-frontend-beta.vercel.app"
   ],
   credentials: true,
 }));
