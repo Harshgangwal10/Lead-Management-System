@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import path from "path"
 import { connectDB } from "./config/db.js"
 import authRoutes from "./routes/authRoutes.js"
 import leadRoutes from "./routes/leadRoutes.js"
@@ -34,6 +35,10 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server started on http://localhost:${PORT}`)
