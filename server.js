@@ -19,7 +19,7 @@ app.use(cors({
   'http://localhost:3000',
  "https://lead-management-system-frontend-a9s9vkxdc.vercel.app"
   ],
-  credentials: true
+  credentials: true,
 }));
 
 app.get('/', (req, res) => {
