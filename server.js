@@ -10,10 +10,10 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-// Connect to database
+
 connectDB();
 
-// Middleware
+
 app.use(cors({
   origin: [
   'http://localhost:3000',
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(cookieParser());
 
-// Routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
 

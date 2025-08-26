@@ -24,7 +24,7 @@ import { generateToken } from '../config/utils.js';
 
      res.status(200).json({
       success:true,
-      token: token // Include token in response
+      
      })  
   }
    catch(error){
@@ -39,7 +39,7 @@ import { generateToken } from '../config/utils.js';
   const { email, password } = req.body;
 
   try{
-    //check for user already present or not 
+     
   const exists = await UserModel.findOne({ email });
   if (exists){
    return res.status(400).json({ success:false, message: "Email already exists" });
