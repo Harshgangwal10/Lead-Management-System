@@ -17,7 +17,7 @@ connectDB();
 app.use(cors({
   origin: [
   'http://localhost:3000',
- "https://lead-management-system-frontend-beta.vercel.app"
+ "https://leadmanagementsys.netlify.app"
   ],
   credentials: true,
 }));
